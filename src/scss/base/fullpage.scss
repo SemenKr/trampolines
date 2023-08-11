@@ -1,13 +1,13 @@
 body {
 	.fp-init & {
-		// Чтобы выключить обновление страницы свайпом на телефоне
+		// Щоб вимкнути оновлення сторінки свайпом на телефоні
 		overflow: hidden;
 		touch-action: none;
 		overscroll-behavior: none;
 	}
 }
 
-// Оболочка секций
+// Оболонка секцій
 [data-fp] {
 	min-height: 100vh;
 	.touch & {
@@ -17,16 +17,16 @@ body {
 		}
 	}
 	.fp-init & {
-		// Для того чтобы секции не перекрывали буллеты
+		// Для того щоб секції не перекривали буллети
 		z-index: 1;
-		// Относительно чего позиционируются секции
+		// Відносно чого позиціонуються секції
 		touch-action: none;
 		position: relative;
 		overflow: hidden;
 	}
 }
 
-// Секция
+// Секція
 [data-fp-section] {
 	.fp-switching & {
 		touch-action: none;
@@ -42,7 +42,7 @@ body {
 		overflow: auto;
 	}
 
-	// Модификации
+	// Модифікації
 	.fp-init .slider-mode &,
 	.fp-init .cards-mode & {
 		transition: transform 0.7s cubic-bezier(0.55, 0.085, 0, 0.99) 0s;
@@ -52,7 +52,7 @@ body {
 	}
 }
 
-// Оболочка буллетов
+// Оболонка буллетів
 .fp-bullets {
 	position: fixed;
 	top: 50%;
@@ -88,8 +88,7 @@ body {
 		box-shadow: rem(0) rem(0) rem(3) #6257fe, 0 0 rem(30) rgba(255, 255, 255, 0.8);
 		border: rem(1) solid #fff;
 		opacity: 0.6;
-		transition: transform 0.4s ease-in-out 0s, opacity 0.4s ease-in-out 0s, background-color 0.4s ease-in-out 0s,
-			box-shadow 0.4s ease-in-out 0s;
+		transition: transform 0.4s ease-in-out 0s, opacity 0.4s ease-in-out 0s, background-color 0.4s ease-in-out 0s, box-shadow 0.4s ease-in-out 0s;
 		@media (any-hover: hover) {
 			&:hover {
 				opacity: 1;

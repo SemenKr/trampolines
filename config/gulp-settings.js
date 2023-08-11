@@ -32,15 +32,15 @@ export const path = {
 	rootFolder: rootFolder,
 	srcFolder: srcFolder,
 	// Путь к нужной папке на удаленном сервере.
-	ftp: ``
+	// ftp: ``
 	// Пример: загрузить в папку 2022 далее в папку с названием проекта
 	// ftp: `2022/${rootFolder}`
 };
 
 // Настройка FTP соединения
 export const configFTP = {
-	host: "", // Адреса FTP сервера
-	user: "", // Ім'я користувача
+	host: "", //Адрес FTP сервера
+	user: "", // Имя пользователя
 	password: "", // Пароль
 	parallel: 5 // Количество одновременных потоков
 }

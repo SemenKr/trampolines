@@ -21,14 +21,14 @@
 	$mail->Port       = 465;                 
 	*/
 
-//От кого письмо
-	$mail->setFrom('from@gmail.com', 'Фрілансер по життю'); // Указать нужный E-mail
+	//От кого письмо
+	$mail->setFrom('samkrekotyn@gmail.com', 'Фрілансер по життю'); // Указать нужный E-mail
 	//Кому отправить
-	$mail->addAddress('to@gmail.com'); // Указать нужный E-mail
+	$mail->addAddress('tonya.smartfit@gmail.com'); // Указать нужный E-mail
 	//Тема письма
-	$mail->Subject = 'Поздравление! Это "Фрилансер по жизни"';
+	$mail->Subject = 'Вітання! Це "Фрілансер по життю"';
 
-	//Тіло листа
+	//Тема письма
 	$body = '<h1>Встречайте супер письмо!</h1>';
 
 	//if(trim(!empty($_POST['email']))){
@@ -36,7 +36,7 @@
 	//}	
 	
 	/*
-	//Прикріпити файл
+	//Прикрепить файл
 	if (!empty($_FILES['image']['tmp_name'])) {
 		//шлях завантаження файлу
 		$filePath = __DIR__ . "/files/sendmail/attachments/" . $_FILES['image']['name']; 
@@ -55,7 +55,7 @@
 	if (!$mail->send()) {
 		$message = 'Ошибка';
 	} else {
-		$message = 'Дані надіслані!Данные отправлены!';
+		$message = 'Данные отправлены!';
 	}
 
 	$response = ['message' => $message];

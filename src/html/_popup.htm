@@ -1,10 +1,18 @@
 <div id="popup" aria-hidden="true" class="popup">
 	<div class="popup__wrapper">
 		<div class="popup__content">
-			<button data-close type="button" class="popup__close">Закрыть</button>
-			<div class="popup__text">
-				Text
-			</div>
+			<button data-close type="button" class="popup__close"><span class="visually-hidden">Закрыть</span></button>
+
+			<form action="sendmail.php" method="post" class="order__form form">
+				<h4 class="form__title title title_form"><span class="title title_form title_decor-accent">Отправьте заявку</span> и&nbsp;мы&nbsp;свяжемся с&nbsp;вами в&nbsp;самое ближайшее время</h4>
+				<input autocomplete="off" type="text" name="name" data-validate data-error="Ошибка" placeholder="Ваше имя" class="form__input" data-required>
+				<input autocomplete="off" type="tel" name="tel" data-error="Ошибка" placeholder="Ваш телефон" class="form__input" data-required>
+				<input autocomplete="off" type="email" name="email" data-error="Ошибка" placeholder="Ваш e-mail" class="form__input" data-required>
+				<div class="form__button-wrapper">
+					<button class="form__button button" type="submit">Записаться</button>
+				</div>
+			</form>
+
 		</div>
 	</div>
 </div>

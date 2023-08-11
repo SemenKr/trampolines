@@ -1,17 +1,17 @@
-// Подключение функционала "Чертоги Фрилансера"
+// Підключення функціоналу "Чертоги Фрілансера"
 import { isMobile, FLS } from "./functions.js";
-// Подключение списка активных модулей
+// Підключення списку активних модулів
 import { flsModules } from "./modules.js";
 
-// Подключение с node_modules
+// Підключення з node_modules
 import tippy from 'tippy.js';
 
-// Подключение стилей с src/scss/libs
+// Підключення стилів з src/scss/libs
 import "../../scss/libs/tippy.scss";
-// Подключение стилей с node_modules
+// Підключення стилів з node_modules
 //import 'tippy.js/dist/tippy.css';
 
-// Запускаем и добавляем в объект модулей
+// Запускаємо та додаємо в об'єкт модулів
 flsModules.tippy = tippy('[data-tippy-content]', {
 
 });

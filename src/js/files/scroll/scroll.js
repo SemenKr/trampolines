@@ -1,23 +1,23 @@
-// Подключение функционала "Чертоги Фрилансера"
+// Підключення функціоналу "Чертоги Фрілансера"
 import { isMobile, getHash, menuClose } from "../functions.js";
 import { flsModules } from "../../files/modules.js";
 // Модуль прокручування до блоку
 import { gotoBlock } from "./gotoblock.js";
-// Смена контроля добавления события window scroll.
+// Змінна контролю додавання події window scroll.
 let addWindowScrollEvent = false;
 
 //====================================================================================================================================================================================================================================================================================================
-// Плавная навигация по странице
+// Плавна навігація по сторінці
 export function pageNavigation() {
-	// data-goto – указать ID блока
-	// data-goto-header – учитывать header
-	// data-goto-top – недокрутить на указанный размер
-	// data-goto-speed – скорость (только если используется дополнительный плагин)
-	// Работаем при нажатии на пункт
+	// data-goto - вказати ID блоку
+	// data-goto-header - враховувати header
+	// data-goto-top - недокрутити на вказаний розмір
+	// data-goto-speed - швидкість (тільки якщо використовується додатковий плагін)
+	// Працюємо при натисканні на пункт
 	document.addEventListener("click", pageNavigationAction);
-	//Если подключен scrollWatcher, то подсвечиваем текущий пункт меню
+	// Якщо підключено scrollWatcher, підсвічуємо поточний пункт меню
 	document.addEventListener("watcherCallback", pageNavigationAction);
-	// Основная функция
+	// Основна функція
 	function pageNavigationAction(e) {
 		if (e.type === "click") {
 			const targetElement = e.target;
@@ -42,7 +42,7 @@ export function pageNavigation() {
 		} else if (e.type === "watcherCallback" && e.detail) {
 			const entry = e.detail.entry;
 			const targetElement = entry.target;
-			// Обработка пунктов навигации, если указано значение navigator, подсвечиваем текущий пункт меню
+			// Обробка пунктів навігації, якщо вказано значення navigator, підсвічуємо поточний пункт меню
 			if (targetElement.dataset.watch === 'navigator') {
 				const navigatorActiveItem = document.querySelector(`[data-goto]._navigator-active`);
 				let navigatorCurrentItem;
@@ -58,11 +58,11 @@ export function pageNavigation() {
 					}
 				}
 				if (entry.isIntersecting) {
-					// Видим объект
+					// Бачимо об'єкт
 					// navigatorActiveItem ? navigatorActiveItem.classList.remove('_navigator-active') : null;
 					navigatorCurrentItem ? navigatorCurrentItem.classList.add('_navigator-active') : null;
 				} else {
-					// Не видим объект
+					// Не бачимо об'єкт
 					navigatorCurrentItem ? navigatorCurrentItem.classList.remove('_navigator-active') : null;
 				}
 			}
@@ -79,7 +79,7 @@ export function pageNavigation() {
 		goToHash ? gotoBlock(goToHash, true, 500, 20) : null;
 	}
 }
-// Работа с шапкой при скроле
+// Робота з шапкою при скролі
 export function headerScroll() {
 	addWindowScrollEvent = true;
 	const header = document.querySelector('header.header');
@@ -95,10 +95,10 @@ export function headerScroll() {
 			!header.classList.contains('_header-scroll') ? header.classList.add('_header-scroll') : null;
 			if (headerShow) {
 				if (scrollTop > scrollDirection) {
-					// длинностролл цоде
+					// downscroll code
 					header.classList.contains('_header-show') ? header.classList.remove('_header-show') : null;
 				} else {
-					// упсцролл цоде
+					// upscroll code
 					!header.classList.contains('_header-show') ? header.classList.add('_header-show') : null;
 				}
 				timer = setTimeout(() => {
@@ -114,9 +114,9 @@ export function headerScroll() {
 		scrollDirection = scrollTop <= 0 ? 0 : scrollTop;
 	});
 }
-// Анимация цифрового счетчика.
+// Модуль анімація цифрового лічильника
 export function digitsCounter() {
-	// Обнуление
+	// Обнулення
 	if (document.querySelectorAll("[data-digits-counter]").length) {
 		document.querySelectorAll("[data-digits-counter]").forEach(element => {
 			element.dataset.digitsCounter = element.innerHTML;
@@ -124,7 +124,7 @@ export function digitsCounter() {
 		});
 	}
 
-	// Функция инициализации
+	// Функція ініціалізації
 	function digitsCountersInit(digitsCountersItems) {
 		let digitsCounters = digitsCountersItems ? digitsCountersItems : document.querySelectorAll("[data-digits-counter]");
 		if (digitsCounters.length) {
@@ -133,7 +133,7 @@ export function digitsCounter() {
 			});
 		}
 	}
-	// Функция анимации
+	// Функція анімації
 	function digitsCountersAnimate(digitsCounter) {
 		let startTimestamp = null;
 		const duration = parseInt(digitsCounter.dataset.digitsCounterSpeed) ? parseInt(digitsCounter.dataset.digitsCounterSpeed) : 1000;
@@ -159,7 +159,7 @@ export function digitsCounter() {
 
 	document.addEventListener("watcherCallback", digitsCounterAction);
 }
-// При подключении модуля обработчик события запустится автоматически
+// При підключенні модуля обробник події запуститься автоматично
 setTimeout(() => {
 	if (addWindowScrollEvent) {
 		let windowScroll = new Event("windowScroll");

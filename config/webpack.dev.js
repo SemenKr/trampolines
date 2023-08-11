@@ -12,7 +12,8 @@ const rootFolder = path.basename(path.resolve());
 let pugPages = fs.readdirSync(srcFolder).filter(fileName => fileName.endsWith('.pug'))
 let htmlPages = [];
 
-if (!pugPages.length) {
+if (!pugPages.length)
+{
 	htmlPages = [new FileIncludeWebpackPlugin({
 		source: srcFolder,
 		htmlBeautifyOptions: {
@@ -55,8 +56,8 @@ const config = {
 		// hot: true,
 		// host: 'local-ip', // localhost
 
-		// Раскомментировать на слабом ПК
-		// (в режиме разработки папка с результатом (dist) будет создаваться на диске)
+		// Розкоментувати на слабкому ПК
+		// (в режимі розробника папка результатом (dist) буде створюватися на диску)
 		/*
 		devMiddleware: {
 			writeToDisk: true,
@@ -91,8 +92,10 @@ const config = {
 							importLoaders: 1,
 							modules: false,
 							url: {
-								filter: (url, resourcePath) => {
-									if (url.includes("img/") || url.includes("fonts/")) {
+								filter: (url, resourcePath) =>
+								{
+									if (url.includes("img/") || url.includes("fonts/"))
+									{
 										return false;
 									}
 									return true;

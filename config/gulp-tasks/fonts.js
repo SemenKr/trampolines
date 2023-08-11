@@ -3,7 +3,7 @@ import fonter from 'gulp-fonter-fix';
 import ttf2woff2 from 'gulp-ttf2woff2';
 
 export const otfToTtf = () => {
-	// Ищем файлы шрифтов .otf
+	// Шукаємо файли шрифтів .otf
 	return app.gulp.src(`${app.path.srcFolder}/fonts/*.otf`, {})
 		.pipe(app.plugins.plumber(
 			app.plugins.notify.onError({
@@ -11,15 +11,15 @@ export const otfToTtf = () => {
 				message: "Error: <%= error.message %>"
 			}))
 		)
-		// Конвертируем в .ttf
+		// Конвертуємо в .ttf
 		.pipe(fonter({
 			formats: ['ttf']
 		}))
-		// Выгружаем в исходную папку
+		// Вивантажуємо у вихідну папку
 		.pipe(app.gulp.dest(`${app.path.srcFolder}/fonts/`))
 }
 export const ttfToWoff = () => {
-	// Ищем файлы шрифтов .ttf
+	// Шукаємо файли шрифтів .ttf
 	return app.gulp.src(`${app.path.srcFolder}/fonts/*.ttf`, {})
 		.pipe(app.plugins.plumber(
 			app.plugins.notify.onError({
@@ -27,37 +27,37 @@ export const ttfToWoff = () => {
 				message: "Error: <%= error.message %>"
 			}))
 		)
-		// Конвертируем в .woff
+		// Конвертуємо в .woff
 		.pipe(fonter({
 			formats: ['woff']
 		}))
-		// Выгружаем в папку с результатом
+		// Вивантажуємо до папки з результатом
 		.pipe(app.gulp.dest(`${app.path.build.fonts}`))
-		// Ищем файлы шрифтов .ttf
+		// Шукаємо файли шрифтів .ttf
 		.pipe(app.gulp.src(`${app.path.srcFolder}/fonts/*.ttf`))
-		// Конвертируем в .woff2
+		// Конвертуємо в .woff2
 		.pipe(ttf2woff2())
-		// Выгружаем в папку с результатом
+		// Вивантажуємо до папки з результатом
 		.pipe(app.gulp.dest(`${app.path.build.fonts}`))
-		// Ищем файлы шрифтов .woff и woff2
+		// Шукаємо файли шрифтів .woff и woff2
 		.pipe(app.gulp.src(`${app.path.srcFolder}/fonts/*.{woff,woff2}`))
-		// Выгружаем в папку с результатом
+		// Вивантажуємо до папки з результатом
 		.pipe(app.gulp.dest(`${app.path.build.fonts}`));
 }
 export const fonstStyle = () => {
 	let fontsFile = `${app.path.srcFolder}/scss/fonts/fonts.scss`;
-	// Если передан флаг --rewrite удаляем файл подключения шрифтов
+	// Якщо передано прапор --rewrite видаляємо файл підключення шрифтів
 	app.isFontsReW ? fs.unlink(fontsFile, cb) : null;
-	// Проверяем существуют ли файлы шрифтов
+	// Перевіряємо чи існують файли шрифтів
 	fs.readdir(app.path.build.fonts, function (err, fontsFiles) {
 		if (fontsFiles) {
-			// Проверяем, существует ли файл стилей для подключения шрифтов
+			// Перевіряємо чи існує файл стилів для підключення шрифтів
 			if (!fs.existsSync(fontsFile)) {
-				// Если файла нет, создаем его
+				// Якщо файлу немає, створюємо його
 				fs.writeFile(fontsFile, '', cb);
 				let newFileOnly;
 				for (var i = 0; i < fontsFiles.length; i++) {
-					// Записываем подключение шрифтов к файлу стилей
+					// Записуємо підключення шрифтів до файлу стилів
 					let fontFileName = fontsFiles[i].split('.')[0];
 					if (newFileOnly !== fontFileName) {
 						let fontName = fontFileName.split('-')[0] ? fontFileName.split('-')[0] : fontFileName;
@@ -86,15 +86,15 @@ export const fonstStyle = () => {
 					}
 				}
 			} else {
-				// Если файл есть, выводим сообщение
-				console.log("Файл scss/fonts/fonts.scss уже существует. Для обновления файла нужно удалить его!");
+				// Якщо файл є, виводимо повідомлення
+				console.log("Файл scss/fonts/fonts.scss вже існує. Для оновлення файлу потрібно видалити його!");
 
 			}
 		} else {
-			// Если шрифтов нет
+			// Якщо шрифтів немає
 			fs.unlink(fontsFile, cb)
 		}
 	});
 	return app.gulp.src(`${app.path.srcFolder}`);
 }
-function cb() {}
+function cb() { }
