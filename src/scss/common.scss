@@ -45,134 +45,20 @@
 //========================================================================================================================================================
 .title {
 	font-family: $fontFamilyTitle;
-	font-weight: 600;
-	@media (max-width: $mobile) {
-		@include adaptiveValue("font-size", 40, 30);
-		line-height: 1.27;
-	}
-	@media (max-width: $tablet) {
-		@include adaptiveValue("font-size", 50, 40);
-		line-height: 1.2;
-	}
-	@media (min-width: $tablet) {
-		@include adaptiveValue("font-size", 60, 50);
-		line-height: 1.16;
-	}
 
-	// .title_sub
-
-	&_sub {
-		font-family: $fontFamilyTitle;
-		font-weight: 600;
-		@media (max-width: $mobile) {
-			@include adaptiveValue("font-size", 26, 18);
-			line-height: 1.43;
-		}
-		@media (max-width: $tablet) {
-			@include adaptiveValue("font-size", 38, 26);
-			line-height: 1.5;
-		}
-		@media (min-width: $tablet) {
-			@include adaptiveValue("font-size", 38, 36);
-			line-height: 1.44;
-		}
-	}
-	// .title_list
-	&_list {
-		font-family: $fontFamily;
-		font-weight: 700;
-		@media (max-width: $mobile) {
-			@include adaptiveValue("font-size", 16, 14);
-			line-height: 1.43;
-		}
-		@media (max-width: $tablet) {
-			@include adaptiveValue("font-size", 18, 16);
-			line-height: 1.5;
-		}
-		@media (min-width: $tablet) {
-			@include adaptiveValue("font-size", 20, 18);
-			line-height: 1.44;
-		}
-	}
-
-	&_price {
-		@media (max-width: $mobile) {
-			font-size: rem(34);
-			line-height: 1.24;
-		}
-		@media (max-width: $tablet) {
-			@include adaptiveValue("font-size", 48, 34);
-			line-height: 1.4;
-		}
-		@media (min-width: $tablet) {
-			@include adaptiveValue("font-size", 60, 48);
-			line-height: 1.3;
-		}
-	}
-
-	&_form {
-		@media (max-width: $mobile) {
-			@include adaptiveValue("font-size", 24, 16);
-			line-height: 1.38;
-		}
-		@media (max-width: $tablet) {
-			@include adaptiveValue("font-size", 28, 24);
-			line-height: 1.4;
-		}
-		@media (min-width: $tablet) {
-			@include adaptiveValue("font-size", 36, 28);
-			line-height: 1.3;
-		}
-	}
-
-	&_decor {
-		color: #e6bdca;
-	}
-
-	&_decor-dark {
-		color: #804e5d;
-	}
-
-	&_decor-accent {
-		color: $accentColor;
-	}
-
-	&_space {
-		margin-left: rem(15);
-		margin-right: rem(15);
-	}
-
-	&_more-l {
-		display: none;
-		@media (min-width: rem(1250)) {
-			display: block;
-		}
-	}
-
-	&_more-m {
-		display: none;
-		@media (min-width: $mobile) {
-			display: block;
-		}
+	&_h1 {
+		font-size: rem(65);
+		text-align: center;
+		font-weight: 400;
+		line-height: normal;
 	}
 }
 
-.description {
-	font-weight: 300;
-	@media (max-width: $mobile) {
-		font-size: rem(14);
-		line-height: 1.57;
-	}
-	@media (max-width: $tablet) {
-		@include adaptiveValue("font-size", 16, 14);
-		line-height: 1.5;
-	}
-	@media (min-width: $tablet) {
-		@include adaptiveValue("font-size", 18, 16);
-		line-height: 1.44;
+.text {
+	&_big {
+		font-size: rem(25);
 	}
 }
-
 //========================================================================================================================================================
 // .swiper-paginations
 .swiper-paginations {

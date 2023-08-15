@@ -1,13 +1,32 @@
 <!DOCTYPE html>
 <html lang="ru">
 @@include('html/_head.htm',{
-"title":"Тоня Крекотун"
+"title":"Батуты"
 })
 
 <body>
 	<div class="wrapper">
 		@@include('html/_header.htm',{})
 		<main class="page">
+			<section class="intro">
+				<div class="intro__container">
+					<h1 class="intro__title title title_h1">детские тренировки на&nbsp;батутах x-kids</h1>
+					<p class="intro__text text text_big">в Санкт-Петербурге</p>
+					<button type="button" class="button button_dark-tangerine button_medium">Записаться</button>
+					<div class="intro__buttons">
+						<button class="button button_dark-tangerine button_small" type="button">Оставить заявку</button>
+						<a class="button button_dark-cerulean button_small" href=”tel:+79876543210”>+7 (987) 654-32-10 </a>
+					</div>
+				</div>
+				<div class="intro__decor decor">
+					<svg class="decor__plate-left" width="295.5" height="293">
+						<use xlink:href="@img/icons/icons.svg#svg-plate-left"></use>
+					</svg>
+					<svg class="decor__plate-right" width="295.5" height="293">
+						<use xlink:href="@img/icons/icons.svg#svg-plate-right"></use>
+					</svg>
+				</div>
+			</section>
 
 		</main>
 		@@include('html/_footer.htm',{})

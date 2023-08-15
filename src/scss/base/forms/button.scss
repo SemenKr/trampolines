@@ -1,35 +1,47 @@
 //<BUTTONS (a.btn+tab)>
-// Сніппет (HTML): btn
 
 .button {
-	display: inline-flex;
+	display: flex;
+	flex-wrap: nowrap;
 	align-items: center;
 	justify-content: center;
-	padding: rem(20) rem(56);
-	background-color: $accentColor;
-	width: rem(200);
-	height: rem(70);
-	color: #ffffff;
-	font-weight: 400;
-	font-size: rem(16);
-	line-height: math.div(24, 16);
-	border-radius: rem(6);
-	transition: background 0.3s ease 0s, color 0.3s ease 0s;
+	color: $white;
+	box-sizing: border-box;
+	border-radius: rem(25);
+	transition:
+		opacity 0.3s ease 0s,
+		text-decoration 0.3s ease 0s;
 
-	@media (min-width: $tablet) {
-		font-size: rem(18);
+	&_small {
+		padding: rem(11);
+		width: rem(167);
+		font-size: rem(13);
+	}
+
+	&_medium {
+		padding: rem(14);
+		width: rem(264);
+		font-size: rem(20);
+	}
+
+	&_dark-tangerine {
+		background-color: $dark-tangerine;
+	}
+
+	&_dark-cerulean {
+		background-color: $dark-cerulean;
+	}
+
+	&_white {
+		background-color: $white;
 	}
 
 	@media (any-hover: hover) {
 		&:hover {
-			background-color: rgba(65, 118, 110, 0.6);
+			text-decoration: underline;
 		}
 		&:active {
-			background-color: rgba(65, 118, 110, 0.4);
-			color: $accentColor;
+			opacity: 0.6;
 		}
-	}
-	&._fw {
-		width: 100%;
 	}
 }
