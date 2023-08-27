@@ -8,6 +8,7 @@
 	color: $white;
 	box-sizing: border-box;
 	border-radius: rem(25);
+	width: 100%;
 	transition:
 		opacity 0.3s ease 0s,
 		text-decoration 0.3s ease 0s;
@@ -16,6 +17,9 @@
 		padding: rem(11);
 		width: rem(167);
 		font-size: rem(13);
+		@media (max-width: $tablet) {
+			width: 100%;
+		}
 	}
 
 	&_medium {
@@ -30,6 +34,11 @@
 
 	&_dark-cerulean {
 		background-color: $dark-cerulean;
+		@media (max-width: $tablet) {
+			background-color: inherit;
+			border-radius: 25px;
+			border: 2px solid $white;
+		}
 	}
 
 	&_white {

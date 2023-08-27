@@ -1,5 +1,6 @@
 .header {
 	position: relative;
+	z-index: 2;
 
 	@media (max-width: $tablet) {
 		position: absolute;
@@ -26,6 +27,18 @@
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
+		}
+	}
+
+	&__logo {
+		@media (max-width: $tablet) {
+			width: rem(143);
+			height: rem(56);
+		}
+
+		@media (max-width: $mobile) {
+			width: rem(102);
+			height: rem(40);
 		}
 	}
 
@@ -130,6 +143,7 @@
 			position: absolute;
 			top: 0;
 			right: 0;
+			left: 0;
 			transition: clip-path ease-in-out 700ms;
 			z-index: 4;
 			flex-direction: column;
@@ -141,6 +155,7 @@
 			&[data-state="opened"] {
 				animation: clipPathCircleOpen 750ms ease-in-out forwards;
 				display: block;
+				width: 100%;
 			}
 
 			&[data-state="closing"] {
@@ -211,7 +226,7 @@
 		display: block;
 		position: relative;
 		width: rem(30);
-		height: rem(20);
+		height: rem(10);
 		padding: rem(15);
 		border-radius: rem(2);
 		outline: none;
@@ -240,7 +255,7 @@
 			width: 100%;
 			height: rem(2);
 			border-radius: rem(5);
-			background-color: $accentColor;
+			background-color: $dark-cerulean;
 		}
 		&::before {
 			top: 0;

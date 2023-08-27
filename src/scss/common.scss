@@ -47,16 +47,25 @@
 	font-family: $fontFamilyTitle;
 
 	&_h1 {
+		@include adaptiveValue("font-size", 65, 40);
 		font-size: rem(65);
 		text-align: center;
 		font-weight: 400;
 		line-height: normal;
+
+		@media (max-width: $tablet) {
+			font-size: rem(40);
+		}
 	}
 }
 
 .text {
 	&_big {
 		font-size: rem(25);
+
+		@media (max-width: $tablet) {
+			font-size: rem(19);
+		}
 	}
 }
 //========================================================================================================================================================

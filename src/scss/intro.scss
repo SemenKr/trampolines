@@ -1,5 +1,17 @@
 .intro {
 	position: relative;
+	background: url("@img/intro/intro-bg.png") #a7d0f6 center/ cover no-repeat;
+
+	@media (min-width: $tablet) {
+		overflow: hidden;
+	}
+	@media (max-width: $tablet) {
+		background: #a7d0f6 url("@img/intro/intro-bg-tablet.png") center / cover no-repeat;
+	}
+
+	@media (max-width: $mobile) {
+		background: #a7d0f6 url("@img/intro/intro-bg-mobile.png") center / cover;
+	}
 
 	&__container {
 		padding-top: 15%;
@@ -7,6 +19,11 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+
+		@media (max-width: $tablet) {
+			padding-top: 17%;
+			padding-bottom: rem(150);
+		}
 	}
 
 	&__title {
@@ -16,41 +33,72 @@
 	&__text {
 		text-align: center;
 		margin-bottom: rem(40);
+		@media (max-width: $tablet) {
+			color: $white;
+			font-weight: 900;
+			margin-bottom: rem(70);
+		}
 	}
 
-	&__decor {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		overflow: hidden;
-		z-index: 0;
-	}
-}
-
-.decor {
-	background: url("@img/intro/intro-bg.png") #a7d0f6 center/ cover no-repeat;
-	@media (max-width: $tablet) {
-		padding-top: 22px;
-		background: url("@img/intro/intro-bg-tablet.png") #a7d0f6 bottom/ cover no-repeat;
-	}
-	z-index: -1;
-	&__plate-left {
-		position: absolute;
-		bottom: rem(-5);
-		left: rem(-30);
+	&__button {
 		@media (max-width: $tablet) {
 			display: none;
 		}
 	}
+
+	&__buttons {
+		@media (max-width: $tablet) {
+			display: flex;
+			width: 100%;
+			gap: rem(20);
+		}
+		@media (max-width: $mobile) {
+			flex-direction: column;
+		}
+	}
+
+	&__plate-left {
+		position: absolute;
+		bottom: rem(-35);
+		left: rem(-100);
+		width: rem(323);
+		height: rem(292);
+		@media (max-width: $tablet) {
+			width: rem(108);
+			height: rem(103);
+			bottom: rem(-20);
+			left: rem(-40);
+			transform: rotate(20deg);
+		}
+		@media (max-width: $mobile) {
+			display: block;
+			width: rem(56);
+			height: rem(51);
+			bottom: rem(-10);
+			left: rem(-20);
+		}
+	}
 	&__plate-right {
 		position: absolute;
-		bottom: rem(-5);
-		right: rem(-20);
+		bottom: rem(-35);
+		right: rem(-100);
+		width: rem(350);
+		height: rem(324);
 
 		@media (max-width: $tablet) {
-			display: none;
+			width: rem(99);
+			height: rem(95);
+			bottom: rem(-20);
+			right: rem(-20);
+			transform: rotate(-40deg);
+		}
+
+		@media (max-width: $mobile) {
+			display: block;
+			width: rem(56);
+			height: rem(51);
+			bottom: rem(-10);
+			right: rem(-10);
 		}
 	}
 }
