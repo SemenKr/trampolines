@@ -9,6 +9,11 @@
 		width: 100%;
 		padding-top: rem(40);
 	}
+
+	@media (max-width: $mobile) {
+		padding-top: rem(24);
+	}
+
 	&__container {
 		display: flex;
 		@media (min-width: $tablet) {
@@ -222,12 +227,12 @@
 .icon-menu {
 	display: none;
 	background-color: transparent;
+
 	@media (max-width: $tablet) {
 		display: block;
 		position: relative;
 		width: rem(30);
-		height: rem(10);
-		padding: rem(15);
+		height: rem(19);
 		border-radius: rem(2);
 		outline: none;
 		z-index: 5;
@@ -253,7 +258,7 @@
 			right: 0;
 			position: absolute;
 			width: 100%;
-			height: rem(2);
+			height: 2px;
 			border-radius: rem(5);
 			background-color: $dark-cerulean;
 		}
